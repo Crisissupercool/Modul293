@@ -1,0 +1,27 @@
+.add-trip-form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      margin: 0 auto;
+    }
+    
+    .add-trip-form input,
+    .add-trip-form textarea {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    
+    .add-trip-form button {
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .add-trip-form .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+    

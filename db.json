@@ -1,0 +1,22 @@
+{
+  "businessTrips": [
+    {
+      "id": "1",
+      "destination": "New York",
+      "flight": "NY123",
+      "description": "Business meeting in downtown New York."
+    },
+    {
+      "id": "2",
+      "destination": "London",
+      "flight": "LN456",
+      "description": "Conference in London."
+    },
+    {
+      "id": "3",
+      "destination": "Tokyo",
+      "flight": "TK789",
+      "description": "Client visit in Tokyo."
+    }
+  ]
+}

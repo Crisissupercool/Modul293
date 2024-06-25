@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import TripList from './components/TripList';
+import AddTrip from './components/AddTrip';
 
-function App() {
+const App = () => {
+  const [trips, setTrips] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/businessTrips')
+      .then(response => response.json())
+      .then(data => setTrips(data));
+  }, []);
+
+  const handleAddTrip = (newTrip) => {
+    setTrips([...trips, newTrip]);
+  };
+
+  const handleDeleteTrip = (id) => {
+    fetch(`http://localhost:3001/businessTrips/${id}`, {
+      method: 'DELETE',
+    }).then(() => {
+      setTrips(trips.filter(trip => trip.id !== id));
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div className="content">
+        <h1>Business Trips and Flights</h1>
+        <AddTrip onAdd={handleAddTrip} />
+        <TripList trips={trips} onDelete={handleDeleteTrip} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
