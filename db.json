@@ -17,6 +17,18 @@
       "destination": "Tokyo",
       "flight": "TK789",
       "description": "Client visit in Tokyo."
+    },
+    {
+      "id": "b28a",
+      "destination": "Bern",
+      "flight": "Abc",
+      "description": "Hallo"
+    },
+    {
+      "id": "ae27",
+      "destination": "Los Angeles",
+      "flight": "IN2947",
+      "description": "Tee party"
     }
   ]
 }
